@@ -44,28 +44,28 @@ public class PhotoTaker {
 	*/
 	
 	public boolean takePhoto() {
-        if(!(ctx.getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)))
-        	return false;
-        Log.i("PhotoTaker", "Just before Open !");
-        try {
-        	cam = Camera.open();
-        } catch (Exception e) { return false; }
-        
-        Log.i("PhotoTaker", "Right after Open !");
-        
-        if (cam == null)
-        	return false;
-        
-        SurfaceView view = new SurfaceView(ctx);
-        try {
-        	holder = view.getHolder();
-        	cam.setPreviewDisplay(holder);
-        } catch(IOException e) { return false; }
-        
-        cam.startPreview();
-        cam.takePicture(null, null, pic);
-
-        return true;
+	        if(!(ctx.getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)))
+	        	return false;
+	        Log.i("PhotoTaker", "Just before Open !");
+	        try {
+	        	cam = Camera.open();
+	        } catch (Exception e) { return false; }
+	        
+	        Log.i("PhotoTaker", "Right after Open !");
+	        
+	        if (cam == null)
+	        	return false;
+	        
+	        SurfaceView view = new SurfaceView(ctx);
+	        try {
+	        	holder = view.getHolder();
+	        	cam.setPreviewDisplay(holder);
+	        } catch(IOException e) { return false; }
+	        
+	        cam.startPreview();
+	        cam.takePicture(null, null, pic);
+	
+	        return true;
 	}
 	
 
